@@ -14,4 +14,12 @@ export class TutorialService {
   tutorialAdd(obj: any): Observable<any> {
     return this.http.post(baseUrl, obj);
   }
+
+  tutorialList(): Observable<any> {
+    return this.http.get(baseUrl);
+  }
+
+  deleteAll(): Observable<any> {
+    return this.http.delete(baseUrl);
+  }
 }

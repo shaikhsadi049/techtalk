@@ -19,7 +19,20 @@ export class TutorialService {
     return this.http.get(baseUrl);
   }
 
+  getTutorialById(id: string): Observable<any> {
+    return this.http.get(`${baseUrl}/${id}`);
+  }
+
   deleteAll(): Observable<any> {
     return this.http.delete(baseUrl);
   }
+
+  update(id: any, data: any): Observable<any> {
+    return this.http.put(`${baseUrl}/${id}`, data);
+  }
+
+  delete(id: any): Observable<any> {
+    return this.http.delete(`${baseUrl}/${id}`);
+  }
+  
 }
